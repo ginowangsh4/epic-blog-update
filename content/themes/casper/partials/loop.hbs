@@ -5,12 +5,29 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
+<style>
+img {
+    float: left;
+    display: inline-block;
+    margin-right: 15px;
+}
+.post-image {
+    float: left;
+    display: inline-block;
+    margin-right: 15px;
+    width: 160px;
+    height: 160px;
+    background-size: cover;
+}
+</style>
+
 <article class="{{post_class}}">
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+      <div class="post-image" style="background-image: url({{image}})"> </div>
+      <p>{{excerpt words="54"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
